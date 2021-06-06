@@ -43,7 +43,8 @@ public class FAQ {
         if (optie == 4) {
             System.out.println();
             System.out.println("Als uw vraag er niet tussen zit, kunt u contact opnemen via:");
-            System.out.println("Email: developers@scoresheet.nl");
+            System.out.println("Email: developers@scoresheet.nl (voor vragen over het programma.");
+            System.out.println("       info@basketball.nl (voor vragen over wedstrijden.");
             System.out.println();
         }
     }
