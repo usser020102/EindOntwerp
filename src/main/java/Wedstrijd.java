@@ -15,7 +15,11 @@ public class Wedstrijd {
 
     public void getScore() {
         System.out.println("Wedstrijd is begonnen!");
-       for(int i = 0 ; i < 10; i++) {
+        Boolean temp;
+        while(temp){
+            String s = scanner.nextLine();
+    if(s.equals("s")){
+        break;
            System.out.println("Welk team heeft er gescoord t/u: ");
            keuze = scanner.nextLine();
             scanner.nextLine();
@@ -29,6 +33,8 @@ public class Wedstrijd {
                scoreU += aantal;
            }
        }
+           
+        }
         System.out.println("Eindstand: " + scoreT + " - " + scoreU);
        if(scoreT > scoreU){
            System.out.println("Thuisteam heeft gewonnen!");
