@@ -14,36 +14,53 @@ public class Wedstrijd {
      */
 
     public void getScore() {
+        System.out.print("Voer 'j' in om de wedstrijd te starten: ");
+        boolean temp = true;
+        String s = scanner.nextLine();
+        if(s.equals("j")){
+            temp = true;
+        }
         System.out.println("Wedstrijd is begonnen!");
-        Boolean temp;
         while(temp){
-            String s = scanner.nextLine();
-    if(s.equals("s")){
-        break;
            System.out.println("Welk team heeft er gescoord t/u: ");
            keuze = scanner.nextLine();
-            scanner.nextLine();
            if (keuze.equals("t")) {
                System.out.println("Hoeveel punten zijn er gescoord door het thuisteam: ");
                aantal = scanner.nextInt();
                scoreT += aantal;
+               scanner.nextLine();
+               System.out.print("Einde (voer 's' in voor ja, 'n' voor nee): ");
+               s = scanner.nextLine();
+               if (s.equals("s")){
+                   temp = false;
+                   break;
+               }
            } else {
                System.out.println("Hoeveel punten zijn er gescoord door het uitteam: ");
                aantal = scanner.nextInt();
                scoreU += aantal;
+               scanner.nextLine();
+               System.out.print("Einde (voer 's' in voor ja, 'n' voor nee): ");
+               s = scanner.nextLine();
+               if (s.equals("s")){
+                   temp = false;
+                   break;
+               }
            }
        }
-           
-        }
         System.out.println("Eindstand: " + scoreT + " - " + scoreU);
-       if(scoreT > scoreU){
-           System.out.println("Thuisteam heeft gewonnen!");
-       }
-       else{
-           System.out.println("Uitteam heeft gewonnen!");
-       }
+        if(scoreT > scoreU){
+            System.out.println("Thuisteam heeft gewonnen!");
+        }
+        else if(scoreU > scoreT){
+            System.out.println("Uitteam heeft gewonnen!");
+        } else if(scoreT == scoreU){
+            System.out.println("Gelijk spel!");
+        }
+        }
+
     }
-}
+
 
 
 
